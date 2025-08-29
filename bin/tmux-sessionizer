@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+  selected=$1
+else
+  selected=$(find ~/Projects ~/Projects/Forme ~/Projects/Clmbr ~/Projects/Personal ~/Scratchpad ~/TTRPG ~/ -mindepth 1 -maxdepth 1 -type d | fzf)
+fi
+
+if [[ -z $selected ]]; then
+  exit 1
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+  # No tmux running: create new session with 3 windows
+  tmux new-session -s "$selected_name" -c "$selected" -n Editor \; \
+    new-window -n Server -c "$selected" \; \
+    new-window -n CLI -c "$selected" \; \
+    select-window -t "$selected_name:1" \; \
+    attach-session -t "$selected_name"
+  exit 0
+fi
+
+# Tmux is running: check if session exists, else create it
+if ! tmux has-session -t="$selected_name" 2>/dev/null; then
+  tmux new-session -ds "$selected_name" -c "$selected" -n Editor
+  tmux new-window -t "$selected_name:" -n Server -c "$selected"
+  tmux new-window -t "$selected_name:" -n CLI -c "$selected"
+  tmux select-window -t "$selected_name:1"
+fi
+
+# Switch to the session
+tmux switch-client -t "$selected_name"
