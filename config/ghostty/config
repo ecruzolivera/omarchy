@@ -1,0 +1,5 @@
+font-family = FiraCode Nerd Font Mono
+font-size = 12
+theme = OneDark
+window-decoration = none
+confirm-close-surface = false

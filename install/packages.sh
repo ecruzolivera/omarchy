@@ -1,6 +1,14 @@
 sudo pacman -S --noconfirm --needed \
-  1password-beta \
-  1password-cli \
+  ghostty \
+  ghostty-shell-integration \
+  ghostty-terminfo \
+  kitty \
+  ttf-firacode-nerd \
+  brave-bin \
+  yazi \
+  tmux \
+  resvg \
+  \
   alacritty \
   avahi \
   bash-completion \
