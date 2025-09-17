@@ -136,3 +136,8 @@ sudo pacman -S --noconfirm --needed \
   yay \
   yazi \
   zoxide
+
+yay -S --noconfirm --needed \
+  rcm \
+  celeste-client-bin \
+  roll
