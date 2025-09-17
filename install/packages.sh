@@ -3,12 +3,13 @@
 sudo pacman -S --noconfirm --needed \
   1password-beta \
   1password-cli \
-  asdcontrol-git \
   alacritty \
+  asdcontrol-git \
   avahi \
   bash-completion \
   bat \
   blueberry \
+  brave-bin \
   brightnessctl \
   btop \
   cargo \
@@ -32,6 +33,9 @@ sudo pacman -S --noconfirm --needed \
   fontconfig \
   fzf \
   gcc14 \
+  ghostty \
+  ghostty-shell-integration \
+  ghostty-terminfo \
   github-cli \
   gnome-calculator \
   gnome-keyring \
@@ -89,6 +93,7 @@ sudo pacman -S --noconfirm --needed \
   python-poetry-core \
   python-terminaltexteffects \
   qt5-wayland \
+  resvg \
   ripgrep \
   satty \
   signal-desktop \
@@ -100,8 +105,10 @@ sudo pacman -S --noconfirm --needed \
   swayosd \
   system-config-printer \
   tldr \
+  tmux \
   tree-sitter-cli \
   ttf-cascadia-mono-nerd \
+  ttf-firacode-nerd \
   ttf-ia-writer \
   ttf-jetbrains-mono-nerd \
   typora \
@@ -127,4 +134,5 @@ sudo pacman -S --noconfirm --needed \
   xournalpp \
   yaru-icon-theme \
   yay \
+  yazi \
   zoxide
