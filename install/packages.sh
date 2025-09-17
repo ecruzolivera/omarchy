@@ -138,6 +138,7 @@ sudo pacman -S --noconfirm --needed \
   zoxide
 
 yay -S --noconfirm --needed \
-  rcm \
   celeste-client-bin \
-  roll
+  rcm \
+  roll \
+  visual-studio-code-bin
